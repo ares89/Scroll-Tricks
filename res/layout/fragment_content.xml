@@ -28,18 +28,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <View style="@style/Item.Top" />
+            <ImageView
+                    android:id="@+id/image"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cover"
+                    style="@style/Item.Top" />
 
             <View android:id="@+id/placeholder"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/sticky_height" />
 
-            <View style="@style/Item.Bottom" />
-            <View style="@style/Item.Bottom.Alt" />
-            <View style="@style/Item.Bottom" />
-            <View style="@style/Item.Bottom.Alt" />
-            <View style="@style/Item.Bottom" />
-            <View style="@style/Item.Bottom.Alt" />
+            <com.example.android.scrolltricks.MyListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

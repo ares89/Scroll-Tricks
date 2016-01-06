@@ -40,8 +40,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             public Fragment getItem(int position) {
                 switch (position) {
                     case 0:
-                        return new QuickReturnFragment();
-                    case 1:
+//                        return new QuickReturnFragment();
+//                    case 1:
                         return new StickyFragment();
                 }
                 return null;
@@ -49,7 +49,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
             @Override
             public int getCount() {
-                return 2;
+                return 1;
             }
 
             @Override
@@ -75,16 +75,16 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         mPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.page_margin));
 
-        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        for (int position = 0; position < adapter.getCount(); position++) {
-            getActionBar().addTab(getActionBar().newTab()
-                    .setText(adapter.getPageTitle(position))
-                    .setTabListener(this));
-        }
-
-        getActionBar().setDisplayShowHomeEnabled(false);
-        getActionBar().setDisplayShowTitleEnabled(false);
+//        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//
+//        for (int position = 0; position < adapter.getCount(); position++) {
+//            getActionBar().addTab(getActionBar().newTab()
+//                    .setText(adapter.getPageTitle(position))
+//                    .setTabListener(this));
+//        }
+//
+//        getActionBar().setDisplayShowHomeEnabled(false);
+//        getActionBar().setDisplayShowTitleEnabled(false);
     }
 
     @Override

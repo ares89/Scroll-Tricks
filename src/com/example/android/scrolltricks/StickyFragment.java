@@ -22,6 +22,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class StickyFragment extends Fragment implements ObservableScrollView.Callbacks {
@@ -52,6 +54,21 @@ public class StickyFragment extends Fragment implements ObservableScrollView.Cal
                         onScrollChanged(mObservableScrollView.getScrollY());
                     }
                 });
+
+        ((ListView)rootView.findViewById(R.id.list)).setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,new String[]{
+                "a","b","c","d","e","f","g","h","i",
+                "a","b","c","d","e","f","g","h","i",
+                "a","b","c","d","e","f","g","h","i",
+                "a","b","c","d","e","f","g","h","i",
+                "a","b","c","d","e","f","g","h","i"
+        }));
+        ((ListView)rootView.findViewById(R.id.list)).setOverScrollMode(View.OVER_SCROLL_NEVER);
+
+        View v=rootView.findViewById(R.id.image);
+        ViewGroup.LayoutParams layoutParams=v.getLayoutParams();
+        layoutParams.width=getActivity().getResources().getDisplayMetrics().widthPixels;
+        layoutParams.height=layoutParams.width*3/2;
+        v.setLayoutParams(layoutParams);
 
         return rootView;
     }
